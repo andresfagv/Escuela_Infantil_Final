@@ -1,0 +1,83 @@
+/* Estilos base que ya tienes */
+
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+[type=radio] + img {
+    cursor: pointer;
+}
+
+[type=radio]:checked + img {
+    outline: 5px solid purple;
+    border-radius: 10px;
+}
+
+body {
+    background-color: rgb(180, 100, 144); /* Color de fondo */
+    padding-top: 50px; /* Ajuste de margen superior */
+}
+
+.form-container {
+    background-color: #FFFFFF; /* Color de fondo del formulario */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100px; /* Tamaño máximo de las imágenes */
+}
+
+.img-opcion {
+    margin: 0 20px;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+.btn {
+    background-color: white;
+    border-color: purple;
+    color: purple; /* Text color */
+}
+
+.btn:hover {
+    background-color: purple;
+    border-color: purple;
+    color: white; /* Text color */
+}
+
+/* Media queries para hacer el diseño responsive */
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20%;
+    }
+
+    .col-md-6 {
+        width: 80%; /* Reducir el ancho del formulario en pantallas pequeñas */
+    }
+
+    .img-opcion {
+        margin: 10px 0; /* Ajustar margen entre las opciones de imagen */
+    }
+
+    img {
+        max-width: 80px; /* Reducir el tamaño máximo de las imágenes en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-6 {
+        width: 100%; /* Ocupar todo el ancho disponible en pantallas aún más pequeñas */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Ajustar el padding de los botones */
+        font-size: 14px; /* Reducir el tamaño de fuente de los botones */
+    }
+}
