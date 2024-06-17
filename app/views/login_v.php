@@ -1,4 +1,6 @@
-<!-- login_view.php -->
+<?php
+session_start();
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,6 +16,18 @@
         <div class="col-md-6">
           <div class="form-container">
             <h2 class="text-center">Iniciar sesión</h2>
+
+            <!-- Mostrar mensaje de error si existe -->
+            <?php 
+            if (isset($_SESSION['login_error'])): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php
+                    echo $_SESSION['login_error'];
+                    unset($_SESSION['login_error']);
+                    ?>
+                </div>
+            <?php endif; ?>
+
             <form method="post" action="../controllers/login_c.php">
               <div class="form-group text-center">
                 <label>Tipo de usuario:</label><br>
@@ -47,7 +61,7 @@
               </div>
   
               <div class="form-group text-center">
-                <input type="submit" value="Iniciar sesión" class="btn">
+                <input type="submit" value="Iniciar sesión" class="btn btn-primary">
               </div>
             </form>
           </div>
