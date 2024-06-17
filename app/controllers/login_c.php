@@ -35,13 +35,15 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['usertyp
                 exit();
         }
     } else {
-        // Redirigir al login nuevamente si los datos no coinciden
-        header("Location: ../../");
+        // Establecer variable de sesión para el error y redirigir al login
+        $_SESSION['login_error'] = 'Correo electrónico o contraseña incorrectos.';
+        header("Location: ../../index.php");
         exit();
     }
 } else {
     // Redirigir al login si no se enviaron los datos necesarios
-    header("Location: ../logout.php");
+    $_SESSION['login_error'] = 'Por favor complete todos los campos.';
+    header("Location: ../../index.php");
     exit();
 }
 
